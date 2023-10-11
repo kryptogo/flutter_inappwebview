@@ -194,9 +194,9 @@ public class InAppWebViewClient extends WebViewClient {
     webView.isLoading = true;
     webView.disposeWebMessageChannels();
     webView.userContentController.resetContentWorlds();
-    loadCustomJavaScriptOnPageStarted(webView);
-
+    
     super.onPageStarted(view, url, favicon);
+    loadCustomJavaScriptOnPageStarted(webView);
 
     if (inAppBrowserDelegate != null) {
       inAppBrowserDelegate.didStartNavigation(url);
