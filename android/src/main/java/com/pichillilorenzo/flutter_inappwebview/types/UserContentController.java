@@ -350,7 +350,5 @@ public class UserContentController {
           "  iframe.contentWindow.document.body.append(script);" +
           "})();";
 
-  private static final String DOCUMENT_READY_WRAPPER_JS_SOURCE = "if (document.readyState === 'interactive' || document.readyState === 'complete') { " +
-          "  " + PluginScriptsUtil.VAR_PLACEHOLDER_VALUE +
-          "}";
+  private static final String DOCUMENT_READY_WRAPPER_JS_SOURCE = "(function() {\n" + PluginScriptsUtil.VAR_PLACEHOLDER_VALUE + ";\n})();";
 }
